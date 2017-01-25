@@ -1,0 +1,7 @@
+<ips:template parameters="$bots" />
+{{if $bots['count'] > 0}}
+	{{$prefixsuffix = explode( ',', \IPS\Settings::i()->botsInOnlineList_prefixsuffix );}}
+	{{foreach $bots['bots'] as $bot}}
+		<li>{$prefixsuffix[0]|raw}{$bot}{$prefixsuffix[1]|raw}</li>
+	{{endforeach}}
+{{endif}}
